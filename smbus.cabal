@@ -1,0 +1,22 @@
+name:                smbus
+version:             0.1.0.0
+synopsis:            Haskell bindings to the linux I2C dev interface
+homepage:            http://github.com/albertov/hs-smbus
+license:             BSD3
+license-file:        LICENSE
+author:              Alberto Valverde Gonzalez
+maintainer:          alberto@toscat.net
+copyright:           2013 Alberto Valverde Gonzalez
+category:            System
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     System.IO.SMBus
+                     , System.IO.SMBus.Internal 
+  build-depends:       base == 4.*
+                     , bytestring
+  include-Dirs:        cbits
+  c-sources:           cbits/smbus.c
+  ghc-options:       -Wall -O3
